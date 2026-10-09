@@ -2,26 +2,23 @@ using UnityEngine;
 
 public class objectBehavior : MonoBehaviour
 {
-    public Vector2 test;
+    public Vector3 test;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        test = transform.position;
+        test = new Vector3(0f, -11.61f,0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if (transform.position.y < test.y)
+        {
+            Debug.Log("hi");
+            transform.position = new Vector3(0f, 0f, 0f);
+        }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        transform.position = new Vector3 (2.9f, 9.39f,0f);
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
-    }
+   
 }
